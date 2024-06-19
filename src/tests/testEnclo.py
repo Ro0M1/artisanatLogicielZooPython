@@ -1,4 +1,6 @@
 import unittest
+from models.enclos import Enclos
+from services.encloService import Enclos
 
 
 class TestAnimal(unittest.TestCase):
@@ -7,7 +9,9 @@ class TestAnimal(unittest.TestCase):
         pass
 
     def test_On_peut_ajouter_un_enclo_du_systeme(self):
-        pass
+        enclo_services = Enclos
+        enclo_1 = Enclos(id=1, nom="Enclo 1", taille="petit", especes_acceptes=["lion"])
+        Enclos.ajouter_un_enclo(enclo_1)
 
     def test_On_peut_modifier_un_enclo_du_systeme(self):
         pass
