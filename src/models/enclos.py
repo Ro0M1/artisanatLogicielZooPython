@@ -1,4 +1,5 @@
 from enum import Enum
+from pydantic import BaseModel
 
 
 class Taille(Enum):
@@ -7,11 +8,8 @@ class Taille(Enum):
     GRAND = "grand"
 
 
-class Enclos:
-    def __init__(
-        self, id: int, nom: str, taille: Taille, especes_acceptes: list
-    ) -> None:
-        self.id = id
-        self.nom = nom
-        self.taille = taille
-        self.especes_acceptes = especes_acceptes
+class Enclos(BaseModel):
+    id: int
+    nom: str
+    taille: Taille
+    especes_acceptes: list
